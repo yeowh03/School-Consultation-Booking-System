@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Home Page</title>
+    </head>
+
+    <body>
+        <h1 align="center">What would you like to do today?</h1>
+        <style>
+            /* unvisited link */
+            a:link {
+              color: rgb(0, 0, 0);
+            }
+            
+            /* visited link */
+            a:visited {
+              color: green;
+            }
+            
+            /* mouse over link */
+            a:hover {
+              color: hotpink;
+            }
+            
+            /* selected link */
+            a:active {
+              color: rgb(255, 0, 0);
+            }
+
+            h1 {font-family: calibri;}
+
+            button {
+                background-color: #04AA6D;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 10%;}
+
+            button:hover {
+                opacity: 0.8;
+                }
+        </style>
+        
+        <form align="center" action="{{url_for('student_check_booking')}}" method="POST">
+          <input type="hidden" name="ID" value="{{ID}}">
+          <button type="submit">Check Bookings</button>
+        </form>
+
+        <form align="center" action="{{url_for('display_teachers')}}" method="POST">
+          <input type="hidden" name="ID" value="{{ID}}">
+          <button type="submit">Book</button>
+        </form>
+
+        <form align="center" action="{{url_for('cancel_booking_a')}}" method="POST">
+          <input type="hidden" name="ID" value="{{ID}}">
+          <button type="submit">Cancel Booking</button>
+        </form>
+
+        <form align="center" action="{{url_for('home')}}" method="POST">
+          <input type="hidden" name="ID" value="{{ID}}">
+          <button type="submit">Log Out</button>
+        </form>
+    </body>
+</html>
